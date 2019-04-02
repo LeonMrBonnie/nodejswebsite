@@ -1,0 +1,57 @@
+    <h1 class="display-4">Pages</h1> 
+
+    <p class="lead pagestxt">Add a new page or edit an existing one:</p>
+    <form action="/pages" method="POST">
+    <input class="form-control pagesform" id="url" name="url" type="TEXT" value="{{url}}" placeholder="URL ('/login')">
+    <input class="form-control pagesform" id="name" name="name" type="TEXT" value="{{name}}" placeholder="Name ('Login')">
+    <i class="fas fa-sign-in-alt"></i><input type="submit" id="submit" class="btn btn-success" value="Submit">
+    </form>
+
+    <p class="lead pagestxt2">Existing pages:</p>
+    <table class="table table-hover table-bordered table-dark mysqlresult">
+    <thead>
+    <tr>
+      <th scope="col">PageURL</th>
+      <th scope="col">Pagename</th>
+      <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each page}}
+      <tr>
+        <td>{{pageurl}}</td>
+        <td>{{pagename}}</td>
+        <td>
+        <form action="/pages" method="POST">
+        <input type="HIDDEN" id="delete" name="delete" value="{{pageurl}}">   
+        <button type="submit" class="btn btn-danger pagedelbtn">Delete Page</button>
+        </form>
+        </td>
+      </tr>
+    {{/each}}
+    </tbody>
+    </table>
+    {{#if delete}}
+    <script>
+    $.notify(
+    "You successfully deleted the page with the url '{{delete}}'", 
+    { position:"top right", className: "error", autoHideDelay: 10000 }
+    );
+    </script>
+    {{/if}}
+    {{#if error}}
+    <script>
+    $.notify(
+    "{{error}}", 
+    { position:"top right", className: "error", autoHideDelay: 10000 }
+    );
+    </script>
+    {{/if}}
+    {{#if success}}
+    <script>
+    $.notify(
+    "You added the page '{{url}}' with the name '{{name}}'", 
+    { position:"top right", className: "success", autoHideDelay: 10000 }
+    );
+    </script>
+    {{/if}}

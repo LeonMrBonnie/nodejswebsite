@@ -1,0 +1,21 @@
+<div class="box">
+    <form class="box" action="/register" method="POST">
+        <h1>Register</h1>
+        <input id="name" name="name" type="TEXT" value="{{name}}" placeholder="Name">
+        <input id="email" name="email" type="TEXT" value="{{email}}" placeholder="E-Mail">
+        <input id="password" name="password" type="PASSWORD" value="{{password}}" placeholder="Password">
+        <input type="submit" name="" value="Register">
+        <button class="registerbtn" onclick="window.location.href='/login'">Login</button>
+        {{#if error}}
+            <p class="lead errortxt"><strong>{{{error}}}</strong></p>
+        {{/if}}
+    </form>
+</div>    
+{{#if logout}}
+<script>
+    $.notify(
+    "You are now successfully logged out.", 
+    { position:"top right", className: "success", autoHideDelay: 10000 }
+    );
+</script>
+{{/if}}

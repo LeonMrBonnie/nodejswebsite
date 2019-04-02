@@ -1,0 +1,65 @@
+
+  <h1 class="display-4">User Search</h1>
+  
+  {{#if deny}}
+  <p class="lead error">{{deny}}</p>
+  {{/if}}
+
+  {{#unless deny}}
+  <form action="/usersearch" method="GET">
+      <input type="TEXT" id="query" name="query" class="form-control login" size="40" value="{{Query}}"><br>
+      <input type="submit" id="submit" class="btn btn-secondary sqlbtn" value="Search the database">
+  </form>
+
+  {{#if error}}
+  <script>
+      $.notify(
+      "{{error}}", 
+      { position:"top right", className: "error", autoHideDelay: 10000 }
+      );
+  </script>
+  {{/if}}
+  {{#if msg}}
+  <script>
+      $.notify(
+      "{{msg}}", 
+      { position:"top right", className: "success", autoHideDelay: 10000 }
+      );
+  </script>
+  {{/if}}
+
+  {{#if items}}
+  <table class="table table-hover table-bordered table-dark mysqlresult">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each items}}
+      <tr>
+        <td>{{ID}}</td>
+        <td>{{Name}}</td>
+        <td>
+        <div>
+        <button class="btn btn-success mysqlbtn" onclick="window.location.href='/edituser?id={{ID}}'">Edit User</button>
+        <form action="/usersearch?query={{Query}}" method="POST" class="searchform">
+        <input type="HIDDEN" id="query" name="query" value="{{Query}}"><br>
+        <input type="HIDDEN" id="makeadmin" name="makeadmin" value="{{ID}}"><br>      
+        <button type="submit" class="btn btn-warning mysqlbtn formbtn">Make/Revoke Admin</button>
+        </form>
+        <form action="/usersearch?query={{Query}}" method="POST" class="searchform">
+        <input type="HIDDEN" id="query" name="query" value="{{Query}}"><br>
+        <input type="HIDDEN" id="deleteuser" name="deleteuser" value="{{ID}}"><br>      
+        <button type="submit" class="btn btn-danger mysqlbtn formbtn2">Delete User</button>
+        </form>
+        </div>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+  </table>
+  {{/if}}
+  {{/unless}}

@@ -1,0 +1,127 @@
+  <h1 class="display-4">Articles</h1> 
+  {{#unless msg}}
+  <button class="btn btn-success createbtn" onclick="window.location.href='/createarticle'">Create New Article</button>
+  {{/unless}}
+  {{#if error}}
+  <p class="lead error">{{error}}</p>
+  <script>
+      $.notify(
+      "{{error}}", 
+      { position:"top right", className: "error", autoHideDelay: 10000 }
+      );
+  </script>
+  {{/if}}
+  {{#if msg}}
+  <p class="lead error">{{msg}}</p>
+  <script>
+      $.notify(
+      "{{msg}}", 
+      { position:"top right", className: "error", autoHideDelay: 10000 }
+      );
+  </script>
+  {{/if}}
+  {{#if delete}}
+  {{#if deleteerror}}
+  <p class="lead error">{{deleteerror}}</p>
+  <script>
+      $.notify(
+      "{{deleteerror}}", 
+      { position:"top right", className: "error", autoHideDelay: 10000 }
+      );
+  </script>
+  {{else}}
+  <p class="lead success2">The article with the id {{deleteid}} was successfully deleted.</p>
+  <script>
+      $.notify(
+      "The article with the id {{deleteid}} was successfully deleted.", 
+      { position:"top right", className: "success", autoHideDelay: 10000 }
+      );
+  </script>
+  {{/if}}
+  {{/if}}
+  {{#unless error}}
+  {{#unless msg}}
+  <table class="table table-hover table-bordered table-dark mysqlresult">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Date</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#if Admin}}
+    {{#each items}}
+      <tr>
+        <td>{{ID}}</td>
+        <td>{{Title}}</td>
+        <td>{{Author}}</td>
+        <td>{{Date}}</td>
+        <td>
+        <button class="btn btn-secondary mysqlbtn" onclick="window.location.href='/viewarticle?id={{ID}}'">View Article</button>
+        <button class="btn btn-warning editarticlebtn" onclick="window.location.href='/editarticle?id={{ID}}'">Edit Article</button>
+        <form action="/articles" method="POST" class="mysqlform">
+        <input type="HIDDEN" id="delete" name="delete" value="{{ID}}">   
+        <button type="submit" class="btn btn-danger deletearticlebtn">Delete Article</button>
+        </form>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+  </table>
+  {{else}}
+  <tbody>
+    {{#each items}}
+      <tr>
+        <td>{{ID}}</td>
+        <td>{{Title}}</td>
+        <td>{{Author}}</td>
+        <td>{{Date}}</td>
+        <td>
+        <button class="btn btn-secondary mysqlbtn" onclick="window.location.href='/viewarticle?id={{ID}}'">View Article</button>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+  </table>
+  {{/if}}
+  {{/unless}}
+  <ul class="pagination newspagination">
+    <li class="page-item"><a class="page-link" id="page-1" href="/articles?page=1">1</a></li>
+    <li class="page-item"><a class="page-link" id="page-2" href="/articles?page=2">2</a></li>
+    <li class="page-item"><a class="page-link" id="page-3" href="/articles?page=3">3</a></li>
+    <li class="page-item"><a class="page-link" id="page-4" href="/articles?page=4">4</a></li>
+    <li class="page-item"><a class="page-link" id="page-5" href="/articles?page=5">5</a></li>
+    <li class="page-item"><a class="page-link" id="page-6" href="/articles?page=6">6</a></li>
+    <li class="page-item"><a class="page-link" id="page-7" href="/articles?page=7">7</a></li>
+    <li class="page-item"><a class="page-link" id="page-8" href="/articles?page=8">8</a></li>
+    <li class="page-item"><a class="page-link" id="page-9" href="/articles?page=9">9</a></li>
+    <li class="page-item"><a class="page-link" id="page-10" href="/articles?page=10">10</a></li>
+  </ul>
+  {{/unless}}
+
+  <script>
+    function findGetParameter(parameterName) 
+    {
+      var result = null,
+      tmp = [];
+      location.search
+      .substr(1)
+      .split("&")
+      .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+      });
+      return result;
+    }
+    
+    window.onload = function()
+    {
+      let page = findGetParameter("page");
+      if(page == null) page = 1;
+      let currentPage = "page-" + page.toString();
+      document.getElementById(currentPage).setAttribute("class", "page-link currentPage");
+    }
+  </script>

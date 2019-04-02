@@ -1,0 +1,24 @@
+
+    <h1 class="display-4">Homepage</h1>
+    <p class="lead">This homepage is only meant for testing with <strong>Node.JS, Express, Handlebars and MySQL</strong>.</p>
+
+    {{#if logout}}
+    <script>
+            $.notify(
+            "You are now successfully logged out.", 
+            { position:"top right", className: "success", autoHideDelay: 10000 }
+            );
+        </script>
+    {{/if}}
+    {{#if login}}
+    <script>
+            $.notify(
+            "You are now successfully logged in.", 
+            { position:"top right", className: "success", autoHideDelay: 10000 }
+            );
+        </script>
+    {{/if}}
+    {{#if motd}}
+    <p class="motdheader"><strong>Message of the Day:</strong></p>
+    <p class="lead motd">{{motd}}</p>
+    {{/if}}

@@ -1,0 +1,42 @@
+<h1 class="display-4">View Article</h1> 
+{{#if error}}
+  <p class="lead error">{{error}}</p>
+  <script>
+      $.notify(
+      "{{error}}", 
+      { position:"top right", className: "error", autoHideDelay: 10000 }
+      );
+  </script>
+{{/if}}
+{{#if msg}}
+  <p class="lead error">{{error}}</p>
+  <script>
+      $.notify(
+      "{{msg}}", 
+      { position:"top right", className: "error", autoHideDelay: 10000 }
+      );
+  </script>
+{{/if}}
+{{#if success}}
+  <p class="lead error">{{error}}</p>
+  <script>
+      $.notify(
+      "{{success}}", 
+      { position:"top right", className: "success", autoHideDelay: 10000 }
+      );
+  </script>
+{{/if}}
+{{#unless error}}
+<p class="lead newstitle"><strong>{{title}}</strong></p>
+<p class="lead newsauthor">Published by <strong><a href="/viewaccount?id={{authorid}}">{{author}}</a></strong> on <strong>{{date}}</strong></p>
+<p class="lead newstext">{{text}}</p>
+
+<button class="btn btn-secondary backbtn" onclick="window.location.href='/articles'">Back to Articles</button>
+
+<p class="lead postcomment"><strong>Post a comment:</strong></p>
+<form action="/viewarticle?id={{id}}" method="POST">
+    <input type="hidden" id="id" name="id" value="{{id}}"><br>
+    <textarea class="form-control commentpost" id="comment" name="comment" placeholder="Comment" rows="2">{{comment}}</textarea>
+    <input type="submit" id="submit" class="btn btn-success newsboxbtn" value="Submit Comment">
+</form>
+{{/unless}}

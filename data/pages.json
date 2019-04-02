@@ -1,0 +1,17 @@
+{
+  "/login": "Login",
+  "/register": "Register",
+  "/impressum": "Impressum",
+  "/createarticle": "Create Article",
+  "/articles": "Articles",
+  "/editarticle": "Edit Article",
+  "/viewarticle": "View Article",
+  "/viewaccount": "View Account",
+  "/acp": "Admin Control Panel",
+  "/usersearch": "User Search",
+  "/edituser": "Edit User",
+  "/404": "404 Error",
+  "/": "Home",
+  "/pages": "Pages",
+  "/avatar": "Avatar Uploader"
+}

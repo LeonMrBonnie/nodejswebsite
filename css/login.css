@@ -1,0 +1,187 @@
+.loginbackground {
+    background: linear-gradient(320deg, #12c2e9, #c471ed, #f64f59);
+    background-size: 10000% 10000%;
+    -webkit-animation: bgGradient 30s ease infinite;
+    -moz-animation: bgGradient 30s ease infinite;
+    animation: bgGradient 30s ease infinite;
+}
+
+@-webkit-keyframes bgGradient {
+    0%{background-position:9% 0%}
+    50%{background-position:92% 90%}
+    100%{background-position:9% 0%}
+}
+@-moz-keyframes bgGradient {
+    0%{background-position:9% 0%}
+    50%{background-position:92% 90%}
+    100%{background-position:9% 0%}
+}
+@keyframes bgGradient {
+    0%{background-position:9% 0%}
+    50%{background-position:92% 90%}
+    100%{background-position:9% 0%}
+}
+
+.logincontainer
+{
+    width: 20%;
+    position: relative;
+    top: 300px;
+    background-color: rgba(168, 168, 168, 0.1);
+    background-size: 500%;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+}
+
+.fourofourcontainer
+{
+    width: 25%;
+    position: relative;
+    top: 300px;
+    background-color: rgba(168, 168, 168, 0.5);
+    background-size: 500%;
+}
+
+.logintxt
+{
+    padding-top: 5px;
+    color: #ffffff;
+}
+
+.fourofourtext
+{
+    padding-top: 5px;
+    padding-bottom: 15px;
+    color: #ffffff;
+}
+
+.loginform
+{
+    width: 85%;
+}
+
+.loginbtn
+{
+    width: 33%;
+    margin-top: 3px;
+    margin-right: 180px;
+    margin-bottom: -10px;
+}
+
+.homebtn
+{
+    width: 33%;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+.errortxt
+{
+    color: rgb(175, 43, 43);
+    font-size: 20px;
+    position: relative;
+}
+
+.impressumbtn
+{
+    position: absolute;
+    right: 95.8%;
+    bottom: 0.1%;
+}
+
+a:link 
+{
+color: rgb(0, 225, 255);
+text-decoration: none;
+}
+
+a:hover 
+{
+color: rgb(0, 162, 255);
+text-decoration: none;
+}
+
+a:active 
+{
+color: blue;
+text-decoration: none;
+} 
+
+.copyrighttxt
+{
+    color: white;
+    position: absolute;
+    font-size: 15px;
+    left: 91.6%;
+    bottom: -1.5%;
+}
+
+.box{
+    width: 400px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #191914;
+    text-align: center;
+  }
+  .box h1{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .box input[type = "text"],.box input[type = "password"]{
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 280px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+  }
+  .box input[type = "text"]:focus,.box input[type = "password"]:focus{
+    width: 300px;
+    border-color: #2ecc71;
+  }
+  .box input[type = "submit"]{
+    border:0;
+    background: none;
+    display: inline-block;
+    margin: 10px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+  }
+  .box input[type = "submit"]:hover{
+    background: #2ecc71;
+  }
+
+  .registerbtn
+{
+    border:0;
+    background: none;
+    display: inline-block;
+    margin: 10px auto;
+    text-align: center;
+    border: 2px solid #666666;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.registerbtn:hover{
+    background: #666666;
+  }

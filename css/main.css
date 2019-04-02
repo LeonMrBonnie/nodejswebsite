@@ -1,0 +1,362 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    width: 102.05%;
+  }
+  
+li {
+    float: left;
+  }
+  
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+li a:hover {
+    background-color: #111;
+  }
+
+.background {
+    background: #7c8dc4;
+    background-size: 1000% 1000%;
+    width: 98%;
+}
+
+p, button, h1, input  {
+    position: relative;
+    left: 16px;
+    bottom: -10px;
+}
+
+.ShiftDown
+{
+    position: relative;
+    left: 16px;
+    bottom: -20px;
+    border: 3px dashed rgb(0, 0, 0);
+    border-radius: 25px;
+}
+
+.mysqlerror
+{
+    left: 100px;
+    bottom: 20px;
+}
+
+table {  
+  position: relative;
+  left: 16px;
+  top: 15px;
+}
+
+.error
+{
+    color: rgb(146, 43, 43);
+}
+
+.success
+{
+    color: green;
+    top: -15px;
+}
+
+.success2
+{
+    color: green;
+}
+
+.login
+{
+    width: 15%;
+}
+
+.login2
+{
+    width: 15%;
+    margin-top: -20px;
+}
+
+.loginbtn
+{
+    margin-top: -15px;
+}
+
+.sqlbtn
+{
+    margin-top: -25px;
+}
+
+.registerbtn
+{
+    bottom: 28px;
+    left: 90px;
+}
+
+.mysqlresult
+{
+    width: 55%;
+}
+
+.mysqlbtn
+{
+    top: -2px;
+    left: 2px;
+}
+
+.formbtn
+{
+    height: 40px;
+    top: -29px;
+    left: 96px;
+}
+
+.formbtn2
+{
+    height: 40px;
+    top: -57px;
+    left: 274px;
+}
+
+.searchform
+{
+    padding-top: -60px;
+    margin-top: -60px;
+    padding-bottom: -60px;
+    margin-bottom: -60px;
+}
+
+.createnewsbox
+{
+    width: 30%;
+    margin-top: -12px;
+    margin-left: 15px;
+    left: -10px;
+    bottom: 10px;
+}
+
+.newsboxbtn
+{
+    margin-top: -7px;
+}
+
+.newsbox
+{
+    width: 22%;
+}
+
+.newssuccess
+{
+    color: green;
+    top: 5px;
+    margin-bottom: 0px;
+}
+
+.newspagination
+{
+    width: 18.4%;
+    margin-left: 15px;
+}
+
+.newstitle
+{
+    line-height: 2.0;
+    font-size: 30pt;
+}
+
+.newsauthor
+{
+    bottom: 22px;
+    margin-left: 4px;
+}
+
+.newstext
+{
+    width: 70%;
+    font-size: 20pt;
+    bottom: 30px;
+    margin-left: 4px;
+}
+
+.backbtn
+{
+    margin-top: -80px;
+}
+
+.createbtn
+{
+    position: absolute;
+    height: 42px;
+    top: 100px;
+    left: 895px;
+}
+
+.editarticlebtn
+{
+    left: 4px;
+    bottom: 2px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.deletearticlebtn
+{
+    left: 225px;
+    bottom: 40px;
+}
+
+.myaccbtn
+{
+    position: absolute;
+    right: 0px;
+    background-color: rgb(0, 0, 0);
+}
+
+.myaccbtn:hover
+{
+    background-color: #555;
+}
+
+.usrsrchbtn
+{
+    position: absolute;
+    right: 116px;
+    background-color: rgb(0, 0, 0);
+}
+
+.usrsrchbtn:hover
+{
+    background-color: #555;
+}
+
+.motdheader
+{
+    font-size: 22px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+.motdbox
+{
+    width: 30%;
+    margin-left: 15px;
+    left: -10px;
+    bottom: 10px;
+}
+
+.motdtext
+{
+    bottom: -15px;
+}
+
+.motdbtn
+{
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+.notifybox
+{
+    position: absolute;
+    top: 30px;
+    left: 1750px;
+    z-index: -5;
+}
+
+.mysqlform
+{
+    margin-bottom: -40px;
+    margin-right: 10px;
+}
+
+.deletearticlebtn
+{
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.currentPage
+{
+    background-color: rgb(197, 197, 197);
+}
+
+.postcomment
+{
+    margin-top: 10px;
+    margin-bottom: -5px;
+}
+
+.commentpost
+{
+    width: 20%;
+    position: relative;
+    left: 15px;
+}
+
+.pagesform
+{
+    width: 20%;
+}
+
+.pagestxt
+{
+    margin-bottom: 2px;
+}
+
+.pagestxt2
+{
+    margin-top: 20px;
+    margin-bottom: 2px;
+}
+
+.pagedelbtn
+{
+    margin-top: -15px;
+    margin-bottom: 5px;
+    margin-left: -15px;
+    margin-right: -60px;
+}
+
+.edituserform
+{
+    width: 12%;
+    display: inline-block;
+}
+
+.details
+{
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+    font-size: 20px;
+}
+
+.uploaded
+{
+    position: relative;
+    margin-left: 15px;
+    padding-top: 5px;
+}
+
+.uploadedavatar
+{
+    position: relative;
+    margin-top: -5px;
+    margin-left: 15px;
+}
+
+.noavatar
+{
+    position: relative;
+    margin-top: -25px;
+    margin-bottom: 0px;
+}
+
+.edituser  { display: table;      }
+.edituserrow     { display: table-row;  }
+.editusercell { display: table-cell;}

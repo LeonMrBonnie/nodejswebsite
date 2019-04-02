@@ -1,0 +1,30 @@
+<h1 class="display-4">Avatar Uploader</h1> 
+{{#if success}}
+  <script>
+      $.notify(
+      "{{success}}", 
+      { position:"top right", className: "success", autoHideDelay: 10000 }
+      );
+  </script>
+{{/if}}
+{{#if error}}
+  <script>
+      $.notify(
+      "{{error}}", 
+      { position:"top right", className: "error", autoHideDelay: 10000 }
+      );
+  </script>
+{{/if}}
+<p class="lead">Upload your avatar here: (Allowed filetypes: <strong>jpg, jpeg, png</strong>)</p>
+<form method="POST" action='/avatar' enctype="multipart/form-data">
+    <input type="file" name="uploadedFile"> </br>
+    <input type="submit" name="submit" value="Upload avatar">
+</form>
+<br>
+
+<p class="lead">Your current avatar:</p>
+{{#if avatar}}
+<img class="uploadedavatar" src="{{avatar}}" alt="Uploaded avatar" height="500" width="400"> 
+{{else}}
+<p class="lead noavatar"><strong>You have no avatar.</strong></p>
+{{/if}}

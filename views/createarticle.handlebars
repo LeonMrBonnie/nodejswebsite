@@ -1,0 +1,40 @@
+
+    <h1 class="display-4">Create Article</h1>
+
+    {{#if success}}
+    <p class="lead newssuccess">The article was successfully created.</p>
+    <p class="lead newssuccess">Click <a href="/viewarticle?id={{id}}">here</a> to view your article.</p>
+    <script>
+      $.notify(
+      "The article was successfully created.", 
+      { position:"top right", className: "success", autoHideDelay: 10000 }
+      );
+    </script>
+    {{/if}}
+    {{#if deny}}
+    <p class="lead error">{{deny}}</p>
+    <script>
+      $.notify(
+      "{{deny}}", 
+      { position:"top right", className: "error", autoHideDelay: 10000 }
+      );
+    </script>
+    {{/if}}
+    {{#unless success}}
+    {{#unless deny}}
+    {{#if error}}
+    <p class="lead error">{{error}}</p>
+    <script>
+      $.notify(
+      "{{error}}", 
+      { position:"top right", className: "error", autoHideDelay: 10000 }
+      );
+    </script>
+    {{/if}}
+   <form action="/createarticle" method="POST">
+      <input type="TEXT" id="title" name="title" size="40" class="form-control newsbox" value="{{title}}" placeholder="Title"><br>
+      <textarea class="form-control createnewsbox" id="text" name="text" placeholder="Text" rows="5">{{text}}</textarea>
+      <input type="submit" id="submit" class="btn btn-secondary newsboxbtn" value="Submit Article">
+    </form>
+    {{/unless}}
+    {{/unless}}

@@ -1,0 +1,33 @@
+{{#if title}}
+<h1 class="display-4">Edit Article - {{title}}</h1>
+{{else}}
+<h1 class="display-4">Edit Article</h1>
+{{/if}}
+{{#if error}}
+<p class="lead error">{{error}}</p>
+<script>
+      $.notify(
+      "{{error}}", 
+      { position:"top right", className: "error", autoHideDelay: 10000 }
+      );
+</script>
+{{/if}}
+{{#if success}}
+<p class="lead success">{{success}}</p>
+<script>
+      $.notify(
+      "{{success}}", 
+      { position:"top right", className: "success", autoHideDelay: 10000 }
+      );
+</script>
+{{/if}}
+{{#unless error}}
+{{#unless success}}
+<form action="/editarticle" method="POST">
+      <input type="hidden" id="id" name="id" value="{{id}}">
+      <input type="TEXT" id="title" name="title" size="40" class="form-control newsbox" value="{{title}}" placeholder="Title"><br>
+      <textarea class="form-control createnewsbox" id="text" name="text" placeholder="Text" rows="5">{{text}}</textarea>
+      <input type="submit" id="submit" class="btn btn-secondary newsboxbtn" value="Submit">
+</form>
+{{/unless}}
+{{/unless}}

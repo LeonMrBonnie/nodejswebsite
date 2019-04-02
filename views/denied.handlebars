@@ -1,0 +1,10 @@
+<h1 class="display-4 error">Access Denied</h1>
+{{#if deny}}
+<p class="lead error">The access was denied because: {{deny}}</p>
+<script>
+    $.notify(
+    "{{deny}}", 
+    { position:"top right", className: "error", autoHideDelay: 10000 }
+    );
+</script>
+{{/if}}

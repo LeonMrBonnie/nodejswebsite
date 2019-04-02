@@ -1,0 +1,29 @@
+<h1 class="display-4">ACP</h1>
+<h1 class="lead">Welcome to the Admin Control Panel, {{username}}!</h1>
+
+<p class="lead motdtext">MOTD:</p>
+<form action="/acp" method="POST">
+      <textarea class="form-control motdbox" id="setmotd" name="setmotd" placeholder="MOTD" rows="1">{{motd}}</textarea>
+      <input type="submit" id="submit" class="btn btn-secondary motdbtn" value="Submit">
+</form>
+
+<button class="btn btn-success" onclick="window.location.href='/usersearch'">Go to Usersearch</button>
+<button class="btn btn-success" onclick="window.location.href='/pages'">Go to Pages Editor</button>
+
+{{#if error}}
+<script>
+      $.notify(
+      "{{error}}", 
+      { position:"top right", className: "error", autoHideDelay: 10000 }
+      );
+</script>
+{{/if}}
+
+{{#if success}}
+<script>
+      $.notify(
+      "{{success}}", 
+      { position:"top right", className: "success", autoHideDelay: 10000 }
+      );
+</script>
+{{/if}}

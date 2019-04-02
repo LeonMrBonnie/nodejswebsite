@@ -1,0 +1,34 @@
+    
+    <h1 class="display-4">Edit User</h1>
+
+    {{#if deny}}
+    <p class="lead error">{{deny}}</p>
+    {{/if}}
+
+    {{#unless deny}}
+    {{#if error}}
+    <p class="lead error">{{error}}</p>
+    {{/if}}
+    {{#unless error}}
+    <form action="/edituser?id={{id}}" class="edituser" method="POST">
+		<p class="edituserrow">
+			<label for="userid" class="lead details editusercell">ID:</label>
+			<input class="form-control editusercell" id="userid" name="userid" type="TEXT" value="{{id}}" readonly><br>
+		</p>
+		<p class="edituserrow">
+			<label for="username" class="lead details editusercell">Name:</label>
+			<input class="form-control editusercell" id="username" name="username" type="TEXT" value="{{name}}"><br>
+		</p>
+        <p class="edituserrow">
+			<label for="email" class="lead details editusercell">Email:</label>
+			<input class="form-control editusercell" id="email" name="email" type="TEXT" value="{{email}}"><br>
+		</p>
+        <p class="edituserrow">
+			<label for="admin" class="lead details editusercell">Admin:</label>
+			<input class="form-control editusercell" id="admin" name="admin" type="number" min="0" max="1" value="{{admin}}"><br>
+		</p>
+        <br>
+        <input class="btn btn-success" type="submit" name="" value="Submit">
+	</form>
+    {{/unless}}
+    {{/unless}}

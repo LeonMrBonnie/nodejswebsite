@@ -1,0 +1,44 @@
+
+  <h1 class="display-4">Account Overview</h1>
+
+  {{#if msg}}
+    <p class="lead"><strong>{{msg}}</strong></p>
+    <script>
+        $.notify(
+        "{{msg}}", 
+        { position:"top right", className: "info", autoHideDelay: 10000 }
+        );
+  </script>
+  {{/if}}
+
+  {{#unless msg}}
+    <p class="lead details">Avatar: </p><br>
+    {{#if avatar}}
+    <img class="uploadedavatar" src="{{avatar}}" alt="User avatar" height="130" width="100">
+    {{else}}
+    <p class="lead noavatar"> This user has no avatar.</p>
+    {{/if}}
+    <p class="lead details">ID: <strong>{{id}}</strong></p>
+    <p class="lead details">Name: <strong>{{name}}</strong></p>
+    {{#if email}}
+    <p class="lead details">Email: <strong>{{email}}</strong></p>
+    {{/if}}
+    <p class="lead details">Admin: <strong>{{admin}}</strong></p>
+
+    {{#unless notself}}
+    <form action="/viewaccount" method="POST">
+    <input type="hidden" id="logout" name="logout" value="1">
+    <input type="submit" id="submit" class="btn btn-danger" value="Log Out">
+    </form>
+    <button onclick="window.location.href='/avatar'" class="btn btn-secondary">Avatar Uploader</button>
+    <script>
+      function error(msg)
+      {
+        $.notify(
+        msg, 
+        { position:"top right", className: "info", autoHideDelay: 10000 }
+        );
+      }
+    </script>
+    {{/unless}}
+  {{/unless}}
