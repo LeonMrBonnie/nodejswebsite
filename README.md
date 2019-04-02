@@ -46,6 +46,7 @@ To use this project you will have to follow these steps:
 ```
 
 By following these steps, the project will be ready to use.
+You can login into the admin account by using the username ***admin*** and the password ***Admin***.
 
 ## Built With
 
